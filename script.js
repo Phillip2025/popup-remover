@@ -13,14 +13,12 @@
 (function() {
     'use strict';
 
-    let tries = 0;
-    let timer = setInterval(function(){
-        let elems = unsafeWindow.document.getElementsByClassName('fc-ab-root');
+    var tries = 0;
+    var timer = setInterval(function(){
+        var elems = unsafeWindow.document.getElementsByClassName('fc-ab-root');
 
         if (elems.length > 0) {
             GM_log("founded popup");
-            let ab = elems[0];
-            //elems[0].parentNode.removeChild(elems[0]);
             elems[0].remove();
             GM_log("removed popup");
             unsafeWindow.document.body.style.overflow = 'visible';
